@@ -81,6 +81,9 @@ ul {
 .header-item:not(:last-child) {
   margin-right: 30px;
 }
+.header-link-visited:first-child {
+  color: var(--header-logo);
+}
 
 .header-underline {
   position: relative;
@@ -88,7 +91,6 @@ ul {
 
 .header-underline::after {
   content: '';
-  left: 0;
   bottom: 0;
   position: absolute;
   width: 100%;
@@ -99,6 +101,13 @@ ul {
   transform: scaleX(0);
   transition: transform 250ms var(--timing-function);
 }
+.header-line:after,
+.header-line-port::after {
+  transform: scaleX(1);
+  display: block;
+  opacity: 1;
+}
+
 .header-underline:hover:after {
   transform: scaleX(1);
   display: block;
@@ -293,6 +302,7 @@ ul {
 }
 .about-item:hover .about-text {
   transform: translateY(0);
+  transition: transform 250ms var(--timing-function);
 }
 
 .about-text-div {
@@ -319,7 +329,6 @@ ul {
   text-transform: uppercase;
   color: #ffffff;
   transform: translateY(100%);
-  transition: transform 250ms var(--timing-function);
 }
 
 .about-title {
@@ -407,6 +416,7 @@ ul {
   align-items: center;
   border-radius: 50%;
   fill: #afb1b8;
+  transition: transform 250ms var(--timing-function);
 }
 
 .team-coach-link:hover,
@@ -439,6 +449,10 @@ ul {
 .client {
   list-style: none;
 }
+.client-link {
+  transition: transform 250ms var(--timing-function);
+}
+
 .client-link:hover,
 .client-link:focus {
   border: 1px solid #2196f3;
@@ -506,6 +520,7 @@ ul {
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
+  transition: transform 250ms var(--timing-function);
 }
 
 .footer-contact:focus,
@@ -547,6 +562,7 @@ ul {
   align-items: center;
   border-radius: 50%;
   fill: #ffffff;
+  transition: transform 250ms var(--timing-function);
 }
 .footer-nav-item + .footer-nav-item {
   margin-left: 10px;
@@ -606,16 +622,15 @@ ul {
   letter-spacing: 0.03em;
   color: var(--header-link);
   background: #f5f4fa;
+  transition: transform 250ms var(--timing-function);
 }
+
 .portfolio-btn:focus,
 .portfolio-btn:hover {
   color: var(--header-logo);
   cursor: pointer;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-.header-link-visited:first-child {
-  color: var(--header-logo);
 }
 
 .portfolio-btn:hover {
@@ -666,6 +681,7 @@ ul {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition: transform 250ms var(--timing-function);
 }
 .portfolio-btn-visited:focus {
   color: #ffffff;
@@ -680,8 +696,8 @@ ul {
   margin-bottom: 30px;
 }
 
-.portfolio-shadow:hover,
-.portfolio-shadow:focus {
+.li-portfolio-item:hover,
+.li-portfolio-item:focus {
   background: #ffffff;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -804,6 +820,7 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
+  transition-property: all;
   transition: transform 250ms var(--timing-function);
   animation: animate-pulse 2.2s;
   animation-iteration-count: 3;
@@ -811,7 +828,10 @@ ul {
 .animate-pulse:hover {
   animation: none;
 }
-
+.modal .modal-close {
+  transition: 0.25s;
+  transition-timing-function: ease-out;
+}
 @keyframes animate-pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.6);
@@ -839,6 +859,7 @@ ul {
   right: 8px;
   cursor: pointer;
 }
+
 .modal-close:hover,
 .modal-close:focus {
   fill: #ffffff;
