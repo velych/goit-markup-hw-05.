@@ -828,10 +828,7 @@ ul {
 .animate-pulse:hover {
   animation: none;
 }
-.modal .modal-close {
-  transition: 0.25s;
-  transition-timing-function: ease-out;
-}
+
 @keyframes animate-pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.6);
