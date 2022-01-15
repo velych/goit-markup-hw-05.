@@ -101,6 +101,7 @@ ul {
   transform: scaleX(0);
   transition: transform 250ms var(--timing-function);
 }
+
 .header-line:after,
 .header-line-port::after {
   transform: scaleX(1);
@@ -703,6 +704,7 @@ ul {
     1px 4px 6px rgba(0, 0, 0, 0.16);
   display: block;
 }
+
 .portfolio-shadow {
   margin: 0;
   padding: 0;
