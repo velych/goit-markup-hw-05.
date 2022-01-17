@@ -329,7 +329,6 @@ ul {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
-  transform: translateY(100%);
 }
 
 .about-title {
@@ -806,6 +805,7 @@ ul {
   background: rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 100vh;
+  transition: opacity 300ms, visibility 300ms;
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%);
@@ -822,10 +822,10 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition-property: all;
   transition: transform 250ms var(--timing-function);
   animation: animate-pulse 2.2s;
   animation-iteration-count: 3;
+  transition-property: all;
 }
 .animate-pulse:hover {
   animation: none;
