@@ -805,7 +805,8 @@ ul {
   background: rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 100vh;
-  transition: opacity 300ms var(--timing-function), visibility 300ms var(--timing-function);
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
 }
 
 .backdrop.is-hidden .modal {
