@@ -829,7 +829,7 @@ ul {
 .modal-close {
   width: 30px;
   height: 30px;
-  background: #ffffff;
+  background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: flex;
