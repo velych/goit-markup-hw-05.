@@ -802,15 +802,14 @@ ul {
 .backdrop {
   position: fixed;
   top: 0;
-  background: rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 100vh;
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%);
+  transform: scale(0.3);
 }
 
 .modal {
@@ -825,29 +824,6 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-function);
-  animation: animate-pulse 2.2s;
-  animation-delay: 1.3s;
-  animation-iteration-count: 2;
-}
-
-.animate-pulse .modal {
-  transition: box-shadow 250ms var(--timing-function);
-}
-
-.animate-pulse:hover {
-  animation: none;
-}
-
-@keyframes animate-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(33, 150, 243, 0.2);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
-  }
 }
 
 .modal-close {
@@ -864,7 +840,6 @@ ul {
   top: 8px;
   right: 8px;
   cursor: pointer;
-  transition: color 250ms var(--timing-function);
 }
 
 .modal-close:hover,
