@@ -95,11 +95,11 @@ ul {
   position: absolute;
   width: 100%;
   height: 4px;
-  background: #2196f3;
+  background-color: #2196f3;
   border-radius: 2px;
   opacity: 0;
   transform: scaleX(0);
-  transition: transform 250ms var(--timing-function);
+  transition: transform 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .header-line:after,
@@ -109,7 +109,8 @@ ul {
   opacity: 1;
 }
 
-.header-underline:hover:after {
+.header-underline:hover:after,
+.header-line:after {
   transform: scaleX(1);
   display: block;
   opacity: 1;
@@ -145,14 +146,15 @@ ul {
 }
 
 .header-contact {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.33;
   letter-spacing: 0.02em;
   color: #757575;
   fill: #757575;
-  display: flex;
-  align-items: center;
+  transition: fill 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 .header-icon {
   width: 16px;
@@ -247,6 +249,8 @@ ul {
 
   margin-right: auto;
   margin-left: auto;
+
+  transition: background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 }
 
 .hero-btn:focus {
@@ -416,7 +420,7 @@ ul {
   align-items: center;
   border-radius: 50%;
   fill: #afb1b8;
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 
 .team-coach-link:hover,
@@ -449,9 +453,6 @@ ul {
 .client {
   list-style: none;
 }
-.client-link {
-  transition: transform 250ms var(--timing-function);
-}
 
 .client-link:hover,
 .client-link:focus {
@@ -460,16 +461,14 @@ ul {
   border-radius: 4px;
   fill: #2196f3;
 }
-.client-link {
-  width: 170px;
-  height: 92px;
-}
 
 .client:not(:last-child) {
   margin-right: 30px;
 }
 
 .client-link {
+  width: 170px;
+  height: 92px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -477,6 +476,8 @@ ul {
   box-sizing: border-box;
   border-radius: 4px;
   fill: #afb1b8;
+
+  transition: border-color 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 
 /* ------------Контактная информация------------ */
@@ -513,23 +514,25 @@ ul {
   letter-spacing: 0.03em;
   color: var(--text-white);
   font-style: normal;
+  transition: color 250ms var(--timing-function);
 }
+
+.footer-link:focus,
+.footer-link:hover {
+  color: #afb1b8;
+}
+
 .footer-contact {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
-  transition: transform 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 
-.footer-contact:focus,
 .footer-contact:hover {
-  color: var(--header-logo);
-}
-.footer-link:focus,
-.footer-link:hover {
-  color: var(--header-logo);
+  color: #ffffff;
 }
 
 /* Присоединяйтесь */
@@ -562,7 +565,7 @@ ul {
   align-items: center;
   border-radius: 50%;
   fill: #ffffff;
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 }
 .footer-nav-item + .footer-nav-item {
   margin-left: 10px;
@@ -614,15 +617,11 @@ ul {
   margin-right: 8px;
 }
 
-.portfolio-btn {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.62;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--header-link);
-  background: #f5f4fa;
-  transition: transform 250ms var(--timing-function);
+.portfolio-btn-active {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+  background-color: var(--header-logo);
 }
 
 .portfolio-btn:focus,
@@ -638,53 +637,17 @@ ul {
   color: var(--text-white);
 }
 .portfolio-btn {
-  border: 0;
-}
-.btn-1 {
-  width: 73px;
-  height: 38px;
-  left: 495px;
-  top: 174px;
-}
-.btn-2 {
-  width: 128px;
-  height: 38px;
-  left: 576px;
-  top: 174px;
+  padding: 6px 22px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  text-align: center;
+  border: none;
   border-radius: 4px;
-}
-.btn-3 {
-  width: 145px;
-  height: 38px;
-  left: 712px;
-  top: 174px;
-  border-radius: 4px;
-}
-.btn-4 {
-  width: 103px;
-  height: 38px;
-  left: 865px;
-  top: 174px;
-  border-radius: 4px;
-}
-.btn-5 {
-  width: 130px;
-  height: 38px;
-  left: 976px;
-  top: 174px;
-  border-radius: 4px;
-}
-
-.portfolio-btn-visited {
-  color: var(--text-white);
-  background: var(--header-logo);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  transition: transform 250ms var(--timing-function);
-}
-.portfolio-btn-visited:focus {
-  color: #ffffff;
+  transition: box-shadow 250ms var(--timing-function), color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function);
 }
 
 /* HERO */
@@ -707,6 +670,7 @@ ul {
 .portfolio-shadow {
   margin: 0;
   padding: 0;
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .hero-port-animation {
