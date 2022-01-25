@@ -87,6 +87,7 @@ ul {
 
 .header-underline {
   position: relative;
+  transition: color 250ms var(--timing-function);
 }
 
 .header-underline::after {
@@ -95,23 +96,13 @@ ul {
   position: absolute;
   width: 100%;
   height: 4px;
+  opacity: 0;
   background-color: #2196f3;
   border-radius: 2px;
-  opacity: 0;
-  transform: scaleX(0);
-  transition: transform 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .header-line:after,
 .header-line-port::after {
-  transform: scaleX(1);
-  display: block;
-  opacity: 1;
-}
-
-.header-underline:hover:after,
-.header-line:after {
-  transform: scaleX(1);
   display: block;
   opacity: 1;
 }
@@ -414,7 +405,6 @@ ul {
 .team-coach-link {
   width: 44px;
   height: 44px;
-  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
